@@ -1,0 +1,52 @@
+ALGORITHM read_a_sentence
+
+ //Declare variables   
+VAR
+    //Declaration and intialization of the 3 main variables to be used as counters.
+    countChar, countWord, countVowel: INTEGER:=0;
+    
+
+    //Declaration and intialization of other variables
+    sentence: STRING;
+    sentenceIndex: INTEGER := 0;
+    character: STRING;
+    countSpace : INTEGER := 0;
+
+
+    
+BEGIN
+
+    // Get input of sentence
+    Read(sentence)
+
+    WHILE (sentence NOT '.') DO
+        countChar := countChar + 1;
+        sentenceIndex := sentenceIndex + 1;
+
+        character = sentence[sentenceIndex];
+
+        // Check if character is a space then count the spaces with the loop
+        IF (character = " ") THEN
+            countSpace = countSpace + 1;
+        END_IF
+
+        // Check if character is a vowel then count
+        IF (character = 'a' or character = 'e' or character = 'i' or character = 'o' or character = 'u') THEN
+            countVowel = countVowel + 1;
+        END_IF
+
+    END_WHILE
+
+    // Add one to the space to get the number of words
+    countWord = countSpace + 1;
+
+    // Add the point to the number of characters 
+    countChar = countChar + 1;
+
+    
+    //print number of characters, words and vowels
+    Write("The number of characters in the sentence is: "+countChar);
+    Write("The number of words in the sentence is: "+countWord);
+    Write("The number of vowels in the sentence is: "+countVowel);
+    
+END
