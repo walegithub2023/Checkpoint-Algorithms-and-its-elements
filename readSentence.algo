@@ -17,8 +17,11 @@ VAR
 BEGIN
 
     // Get input of sentence
-    Read(sentence)
+    Read(sentence);
 
+
+
+    //Begin or use a while do loop
     WHILE (sentence NOT '.') DO
         countChar := countChar + 1;
         sentenceIndex := sentenceIndex + 1;
